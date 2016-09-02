@@ -8,4 +8,38 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="Tag" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingRight">@dimen/tag_horizontal_padding</item>
+        <item name="android:paddingLeft">@dimen/tag_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/tag_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/tag_vertical_padding</item>
+        <item name="android:background">@drawable/selector_button_rounded_accent</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_margin">@dimen/widget_internal_spacing_vertical</item>
+    </style>
+
+    <style name="MobileApplication" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">22sp</item>
+        <item name="android:paddingRight">@dimen/tag_horizontal_padding</item>
+        <item name="android:paddingLeft">@dimen/tag_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/tag_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/tag_vertical_padding</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_margin">@dimen/widget_internal_spacing_vertical</item>
+    </style>
+
+    <style name="Text" parent="TextAppearance.AppCompat"/>
+
+    <style name="Text.Header1">
+        <item name="android:textSize">@dimen/text_extra_extra_large</item>
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
 </resources>

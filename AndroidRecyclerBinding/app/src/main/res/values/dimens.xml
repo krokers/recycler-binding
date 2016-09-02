@@ -2,4 +2,11 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="corner_circle">24dp</dimen>
+    <dimen name="tag_horizontal_padding">12dp</dimen>
+    <dimen name="tag_vertical_padding">7dp</dimen>
+    <dimen name="widget_internal_spacing_vertical">8dp</dimen>
+    <dimen name="text_extra_extra_large">19sp</dimen>
+    <dimen name="spacing_normal">12dp</dimen>
+    <dimen name="widget_spacing_vertical">@dimen/spacing_normal</dimen>
 </resources>
