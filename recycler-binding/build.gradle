@@ -1,5 +1,29 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'rampsoftware'
+    bintrayName = 'recycler-binding'
+
+    publishedGroupId = 'eu.rampsoftware'
+    libraryName = 'RecyclerBinding'
+    artifact = 'recycler-binding'
+
+    libraryDescription = 'Android databinding adapters for Recycler View'
+
+    siteUrl = 'https://github.com/krokers/recycler-binding'
+    gitUrl = 'https://github.com/krokers/recycler-binding.git'
+
+    libraryVersion = '0.1.0'
+
+    developerId = 'ramps'
+    developerName = 'Ramps'
+    developerEmail = 'rampsoftware@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
@@ -8,7 +32,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
-        versionName "1.0"
+        versionName "0.1.0"
     }
     buildTypes {
         release {
@@ -26,3 +50,7 @@ dependencies {
     provided 'com.android.support:recyclerview-v7:24.1.1'
     compile 'com.android.support:appcompat-v7:24.1.1'
 }
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
