@@ -6,7 +6,7 @@
     <data>
         <variable
             name="model"
-            type="eu.rampsoftware.recyclerbinding.demo.model.MainActivityViewModel" />
+            type="eu.rampsoftware.recyclerbinding.demo.model.LinearListViewModel" />
     </data>
 
     <RelativeLayout
@@ -16,7 +16,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context=".view.MainActivity">
+        tools:context=".view.LinearListActivity">
 
         <LinearLayout
             android:id="@+id/main_layout_add"

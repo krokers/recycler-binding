@@ -8,14 +8,14 @@ import android.text.TextUtils;
 
 import eu.rampsoftware.recyclerbinding.BR;
 
-public class MainActivityViewModel extends BaseObservable {
+public class LinearListViewModel extends BaseObservable {
 
 
     private ObservableList<MobileApplicationViewModel> mApplications = new ObservableArrayList<>();
     private TagsViewModel mTags = new TagsViewModel();
     private String mNewName;
 
-    public MainActivityViewModel() {
+    public LinearListViewModel() {
         initializeModel();
     }
 

@@ -24,7 +24,7 @@
         <item name="android:layout_margin">@dimen/widget_internal_spacing_vertical</item>
     </style>
 
-    <style name="MobileApplication" parent="TextAppearance.AppCompat">
+    <style name="ListCard" parent="TextAppearance.AppCompat">
         <item name="android:textSize">22sp</item>
         <item name="android:paddingRight">@dimen/tag_horizontal_padding</item>
         <item name="android:paddingLeft">@dimen/tag_horizontal_padding</item>
@@ -33,6 +33,7 @@
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:layout_margin">@dimen/widget_internal_spacing_vertical</item>
+        <item name="android:background">@android:color/white</item>
     </style>
 
     <style name="Text" parent="TextAppearance.AppCompat"/>
