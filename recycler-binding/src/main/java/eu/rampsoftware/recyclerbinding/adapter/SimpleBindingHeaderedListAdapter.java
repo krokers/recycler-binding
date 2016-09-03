@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.List;
-
 
 public class SimpleBindingHeaderedListAdapter<T> extends RecyclerView.Adapter<SimpleBindingHeaderedListAdapter.BindingHolder> {
     public static final int TYPE_HEADER = 0;
@@ -21,30 +19,28 @@ public class SimpleBindingHeaderedListAdapter<T> extends RecyclerView.Adapter<Si
     private final Object mHeaderModel;
     private final int mBindingVariableIdHeader;
     private final int mHeaderLayoutResId;
-    private final OnBindingListChangedCallback mOnListChangedCallback;
 
     public SimpleBindingHeaderedListAdapter(final ObservableList<T> items, final int bindingVariableId, final int rowLayoutResId,
-                                            final Object headerModel, final int bindingVariableIdHeader , final int headerLayoutResId) {
+                                            final Object headerModel, final int bindingVariableIdHeader, final int headerLayoutResId) {
         mItems = items;
         mBindingVariableId = bindingVariableId;
         mRowLayoutResId = rowLayoutResId;
         mHeaderModel = headerModel;
         mBindingVariableIdHeader = bindingVariableIdHeader;
         mHeaderLayoutResId = headerLayoutResId;
-        this.mOnListChangedCallback = new OnBindingListChangedCallback(this);
-        mItems.addOnListChangedCallback(this.mOnListChangedCallback);
+        OnBindingListChangedCallback callback = new OnBindingListChangedCallback(this);
+        mItems.addOnListChangedCallback(new HeaderedListChangedCallbackWrapper(callback));
     }
 
 
-
-    public T getItem(final int position){
+    public T getItem(final int position) {
         return mItems.get(position);
     }
 
     @Override
     public BindingHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         View v;
-        if(viewType == TYPE_HEADER){
+        if (viewType == TYPE_HEADER) {
             v = LayoutInflater.from(parent.getContext())
                     .inflate(mHeaderLayoutResId, parent, false);
         } else {
@@ -57,7 +53,7 @@ public class SimpleBindingHeaderedListAdapter<T> extends RecyclerView.Adapter<Si
 
     @Override
     public void onBindViewHolder(final BindingHolder holder, final int position) {
-        if(isPositionHeader(position)){
+        if (isPositionHeader(position)) {
             holder.getBinding().setVariable(mBindingVariableIdHeader, mHeaderModel);
             holder.getBinding().executePendingBindings();
         } else {
@@ -95,5 +91,39 @@ public class SimpleBindingHeaderedListAdapter<T> extends RecyclerView.Adapter<Si
         public ViewDataBinding getBinding() {
             return binding;
         }
+    }
+
+    private static class HeaderedListChangedCallbackWrapper extends ObservableList.OnListChangedCallback {
+
+        private final OnBindingListChangedCallback mCallback;
+
+        public HeaderedListChangedCallbackWrapper(OnBindingListChangedCallback callback) {
+            this.mCallback = callback;
+        }
+
+        @Override
+        public void onChanged(ObservableList observableList) {
+            mCallback.onChanged(observableList);
+        }
+
+        public void onItemRangeChanged(ObservableList sender, int positionStart, int itemCount) {
+            mCallback.onItemRangeChanged(sender, positionStart + 1, itemCount);
+        }
+
+        @Override
+        public void onItemRangeInserted(ObservableList sender, int positionStart, int itemCount) {
+            mCallback.onItemRangeInserted(sender, positionStart + 1, itemCount);
+        }
+
+        @Override
+        public void onItemRangeMoved(ObservableList sender, int fromPosition, int toPosition, int itemCount) {
+            mCallback.onItemRangeMoved(sender, fromPosition + 1, toPosition + 1, itemCount);
+        }
+
+        @Override
+        public void onItemRangeRemoved(ObservableList sender, int positionStart, int itemCount) {
+            mCallback.onItemRangeRemoved(sender, positionStart + 1, itemCount);
+        }
+
     }
 }
