@@ -3,7 +3,11 @@ Android data binding adapters for RecyclerView. This library let's you bind Recy
 keeping your view models clean and tidy. 
 
 ## Download
-Not released yet
+
+Library is distributed via jcenter repository. To include in your project, simply add dependency:
+```groovy
+compile 'eu.rampsoftware:recycler-binding:0.1.1'
+```
 
 ## How to use
 #### Prepare ViewModel for your item:
