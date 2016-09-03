@@ -22,7 +22,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 style="@style/ListCard"
-                android:text="@{model.type, default=Item}"/>
+                android:text="@{model.type, default=Item}"
+                android:onClick="@{model.performAction}"/>
 
     </android.support.v7.widget.CardView>
 
