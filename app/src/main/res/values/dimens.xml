@@ -6,7 +6,10 @@
     <dimen name="tag_horizontal_padding">12dp</dimen>
     <dimen name="tag_vertical_padding">7dp</dimen>
     <dimen name="widget_internal_spacing_vertical">8dp</dimen>
-    <dimen name="text_extra_extra_large">19sp</dimen>
     <dimen name="spacing_normal">12dp</dimen>
     <dimen name="widget_spacing_vertical">@dimen/spacing_normal</dimen>
+
+    <dimen name="text_large">14sp</dimen>
+    <dimen name="text_normal">12sp</dimen>
+    <dimen name="text_extra_extra_large">19sp</dimen>
 </resources>

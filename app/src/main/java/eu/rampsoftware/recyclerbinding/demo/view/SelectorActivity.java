@@ -37,7 +37,7 @@ public class SelectorActivity extends AppCompatActivity {
         if(ScreenTypesViewModel.TYPE_LINEAR_LIST.equalsIgnoreCase(event.getType())){
             startActivity(new Intent(this, LinearListActivity.class));
         } else if(ScreenTypesViewModel.TYPE_STAGGERED_GRID.equalsIgnoreCase(event.getType())){
-            
+            startActivity(new Intent(this, StaggeredGridActivity.class));
         }
     }
 }

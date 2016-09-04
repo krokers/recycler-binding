@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <import type="eu.rampsoftware.recyclerbinding.demo.R"/>
+
+        <variable
+            name="model"
+            type="eu.rampsoftware.recyclerbinding.demo.model.GridItemViewModel"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true"
+        android:layout_margin="4dp"
+        card_view:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <!--<TextView-->
+                <!--android:id="@+id/item_challenge_title"-->
+                <!--style="@style/Text.Caption"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:gravity="center"-->
+                <!--android:paddingLeft="4dp"-->
+                <!--android:paddingRight="4dp"-->
+                <!--android:text='@{model.title, default="Some long title of the fantastic challenge"}'/>-->
+
+
+            <ImageView
+                android:id="@+id/item_challenge_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_launcher"
+                app:imageResource="@{model.imageResId}"
+                android:scaleType="centerCrop"
+                />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</layout>
