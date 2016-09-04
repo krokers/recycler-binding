@@ -5,6 +5,7 @@
 
     <data>
 
+        <import type="eu.rampsoftware.recyclerbinding.extensions.LayoutManagerType"/>
         <variable
             name="model"
             type="eu.rampsoftware.recyclerbinding.demo.model.StaggeredGridViewModel"/>
@@ -16,5 +17,7 @@
         android:scrollbars="vertical"
         bind:itemBindingId="@{model.itemBindingId}"
         bind:itemLayout="@{@layout/item_grid}"
-        bind:items="@{model.items}"/>
+        bind:items="@{model.items}"
+        bind:layoutType="@{LayoutManagerType.STAGGERED_GRID}"
+        bind:spanCount="@{2}"/>
 </layout>
