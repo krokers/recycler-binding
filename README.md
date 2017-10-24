@@ -6,7 +6,7 @@ keeping your view models clean and tidy.
 
 Library is distributed via jcenter repository. To include in your project, simply add dependency:
 ```groovy
-compile 'eu.rampsoftware:recycler-binding:0.1.1'
+compile 'eu.rampsoftware:recycler-binding:0.1.3'
 ```
 
 ## How to use
